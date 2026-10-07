@@ -87,10 +87,10 @@ public class Game {
         player = new Hand();
         dealerHand = new Hand();
         playerHands.add(player);
-        //System.out.println("player cards: ");
+
         player.addCard(shoe.deal());
         player.addCard(shoe.deal());
-        //System.out.println("dealer cards: ");
+
         dealerHand.addCard(shoe.deal());
         dealerHand.addCard(shoe.deal());
 
@@ -105,7 +105,7 @@ public class Game {
     }
 
     public void playerTurn() {
-        //System.out.println("player turn: ");
+
         for (int i=0; i<playerHands.size(); i++) {
             Hand newHand = playerHands.get(i);
             playHand(newHand);
@@ -143,7 +143,7 @@ public class Game {
 
                     split(newHand);
 
-                    break;// placeholder until real splitting
+                    break;
                 case "Surr":
                     if (surrenderAllow && newHand.getsize() == 2) {
                         //System.out.println("Surrendered");
@@ -183,7 +183,6 @@ public class Game {
     }
 
     public void dealerTurn() {
-        //System.out.println("dealers first two cards: " + dealerHand.getHandValue());
 
         if (H17) {
             while (dealerHand.getHandValue() < 17 || (dealerHand.isSoft() && dealerHand.getHandValue() == 17)) {
@@ -209,10 +208,6 @@ public class Game {
     public double determineWinner(Hand hand){
         int value = hand.getHandValue();
         int dealerValue = dealerHand.getHandValue();
-        //System.out.println("player total: " + value);
-        //System.out.println("dealer total: " + dealerValue);
-
-
         if (hand.isSurrendered){
             return -.5;
         }

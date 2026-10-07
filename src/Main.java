@@ -59,16 +59,11 @@ public class Main {
         Game newgame = new Game(numberOfDecks, pen, H17);
         double aV=0;
         double totalWagered = 0;
-        int curBankRoll = bankRoll;
+        double curBankRoll = bankRoll;
         int numRuins = 0;
         int games = 1;
         double sumOfSquares = 0;
 
-
-        int numTC0 = 0;
-        int numTC1 = 0;
-        int numTCn1 = 0;
-        int numTC3 = 0;
 
 
         for (int i=0; i<rounds; i++){
@@ -84,7 +79,6 @@ public class Main {
                     bet = betAmounts[trueCount+1];
                 }
             }
-            //System.out.println(trueCount + ",    bet:  " + bet);
             double result = newgame.playRound(bet);
             aV+=result;
             sumOfSquares += result * result;
@@ -102,19 +96,6 @@ public class Main {
             }
 
 
-
-            //if (trueCount == 0){
-            //    numTC0++;
-            //}
-            //if (trueCount == 1){
-            //    numTC1++;
-            //}
-            //if (trueCount == -1){
-            //    numTCn1++;
-            //}
-            //if (trueCount == 3){
-            //    numTC3++;
-            //}
 
 
         }
@@ -137,21 +118,5 @@ public class Main {
         System.out.printf("%.2f", ror*100);
         System.out.println("%\n\nRisk of Ruin (or RoR) is the percent chance that, given an infinite amount of rounds, you will lose all of your inital bankroll.\n\n");
 
-
-
-        //System.out.println("True Count -1 bets:  " + ((double) numTCn1)/rounds);
-        //System.out.println("True Count 0 bets:  " + ((double) numTC0)/rounds);
-        //System.out.println("True Count 1 bets:  " + ((double) numTC1)/rounds);
-        //System.out.println("True Count 3 bets:  " + ((double) numTC3)/rounds);
-
-
-
-
-
-
-        //for (int i = 0; i < 100; i++) {
-        //    System.out.println(newShoe.deal().getValue());
-        //}
-        //System.out.println(newShoe.getShoeSize());
     }
 }

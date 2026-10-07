@@ -102,7 +102,7 @@ public class Strategy {
             }
         }
         if (playerCards.isSoft()){
-            //System.out.println("value=" + value + " isPair=" + playerCards.isPair());
+
             return softStrat[21-value][dealerCard.getValue()-2];
         } else {
             String action = hardStrat[21-value][dealerCard.getValue()-2];

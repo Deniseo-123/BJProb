@@ -43,7 +43,6 @@ public class Shoe {
         count = 0;
         shoeSize = numDecks*52;
         cardIndex = 0;
-        //System.out.println("shuffle");
     }
 
     public Card deal(){

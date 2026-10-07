@@ -23,13 +23,12 @@ public class Card {
     }
 
 
-    //returns card value
+
     public int getValue(){
         return value;
     }
 
 
-    //is it an Ace?
     public boolean isItAce(){
         return isAce;
     }
